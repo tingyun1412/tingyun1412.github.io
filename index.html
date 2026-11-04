@@ -57,7 +57,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero .kicker{font-size:var(--s-xs);letter-spacing:.35em;color:var(--gold)}
 .hero h1{font-size:clamp(1.6rem,3.6vw,2.4rem);line-height:1.6;font-weight:400}
 .hero h1 em{font-style:normal;color:var(--gold)}
-.hero .intro{max-width:34em;color:var(--ink-2)}
+.hero .intro{color:var(--ink-2)}
 .hero .meta{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:var(--s-xs);color:var(--ink-3);letter-spacing:.15em;border-top:1px solid var(--rule);padding-top:18px}
 
 /* セクション */
@@ -66,7 +66,7 @@ section.block>.wrap{display:grid;grid-template-columns:72px 1fr;gap:clamp(20px,5
 .sec-h{writing-mode:vertical-rl;font-size:var(--s-xl);letter-spacing:.5em;font-weight:500;line-height:1;position:sticky;top:calc(env(safe-area-inset-top,0px) + 84px);align-self:start;height:max-content}
 .sec-h span{display:block;font-size:var(--s-xs);letter-spacing:.35em;color:var(--ink-3);margin-right:14px;font-weight:400}
 .sec-body{display:grid;gap:clamp(64px,10vw,120px);min-width:0}
-.sec-note{max-width:36em;color:var(--ink-2);font-size:var(--s-sm)}
+.sec-note{color:var(--ink-2);font-size:var(--s-sm)}
 
 /* 作品 */
 .work{display:grid;gap:28px;min-width:0}
@@ -75,7 +75,7 @@ section.block>.wrap{display:grid;grid-template-columns:72px 1fr;gap:clamp(20px,5
 .course b{font-weight:500;color:var(--gold);margin-right:.6em}
 .work h3{font-size:var(--s-lg);line-height:1.6}
 .work h3 small{font-size:var(--s-sm);color:var(--ink-3);margin-left:.8em;letter-spacing:.12em;font-weight:400}
-.work .text{max-width:36em;display:grid;gap:1em;color:var(--ink-2)}
+.work .text{display:grid;gap:1em;color:var(--ink-2)}
 .tag{display:inline-block;font-size:var(--s-xs);letter-spacing:.2em;color:var(--indigo);border:1px solid currentColor;padding:0 .7em;line-height:1.9;margin-left:.6em;vertical-align:.15em}
 
 figure{margin:0;display:grid;gap:8px;min-width:0}
@@ -98,17 +98,17 @@ figcaption{font-size:var(--s-xs);color:var(--ink-3);letter-spacing:.12em;line-he
 .process p{font-size:var(--s-xs);color:var(--ink-2);line-height:1.85;letter-spacing:.06em}
 
 /* 一行引用 */
-.quote{font-size:var(--s-md);color:var(--ink);border-left:1px solid var(--gold);padding-left:18px;max-width:30em;letter-spacing:.12em}
+.quote{font-size:var(--s-md);color:var(--ink);border-left:1px solid var(--gold);padding-left:18px;letter-spacing:.12em}
 
 /* 準備中 */
 .soon{border:1px dashed var(--rule);padding:28px;display:grid;gap:8px;color:var(--ink-2)}
 .soon .st{font-size:var(--s-xs);letter-spacing:.3em;color:var(--gold)}
 
 /* 技術カード */
-.tech{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink)}
+.tech{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--ink)}
 .tech article{padding:22px 22px 6px 0;display:grid;gap:10px;align-content:start;min-width:0;border-right:1px solid var(--rule);padding-left:0}
-.tech article+article{padding-left:22px}
-.tech article:last-child{border-right:0}
+.tech article:nth-child(even){padding-left:22px;border-right:0}
+.tech article:nth-child(n+3){border-top:1px solid var(--rule)}
 .tech h3{font-size:var(--s-md)}
 .tech p{font-size:var(--s-sm);color:var(--ink-2);line-height:1.9}
 .tech .bridge{font-size:var(--s-xs);color:var(--indigo);letter-spacing:.1em;line-height:1.8;border-top:1px solid var(--rule);padding-top:10px}
@@ -132,6 +132,18 @@ footer .wrap{padding-block:48px;display:flex;flex-wrap:wrap;justify-content:spac
 .frame.plain{background:transparent}
 .frame.plain img{aspect-ratio:auto!important;object-fit:contain;box-shadow:0 1px 0 var(--rule)}
 .photos{columns:3 260px;column-gap:12px}
+.more{display:flex;flex-wrap:wrap;gap:8px 24px;font-size:var(--s-sm)}
+.more a{border-bottom-color:var(--gold)}
+.more a::after{content:" ↗";color:var(--gold);font-size:.85em}
+.overview .wrap{padding-block:0 clamp(48px,8vw,88px)}
+.ov{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
+.ov div{padding:18px 18px 4px 0;display:grid;gap:8px;align-content:start;min-width:0}
+.ov div+div{padding-left:18px;border-left:1px solid var(--rule)}
+.ov h2{font-size:var(--s-sm);letter-spacing:.3em;color:var(--gold);font-weight:500}
+.ov p{font-size:var(--s-xs);color:var(--ink-3);letter-spacing:.1em;line-height:1.7}
+.ov ul{list-style:none;margin:0;padding:0;display:grid;gap:4px;font-size:var(--s-sm)}
+.ov ul a{border:0}
+.ov ul a:hover{color:var(--gold)}
 .ph-h{font-size:var(--s-sm);letter-spacing:.4em;color:var(--ink-2);border-bottom:1px solid var(--rule);padding-bottom:8px;margin-bottom:-40px}
 .ph{break-inside:avoid;margin:0 0 12px;background:var(--paper-2)}
 .ph img{width:100%}
@@ -139,7 +151,9 @@ footer .wrap{padding-block:48px;display:flex;flex-wrap:wrap;justify-content:spac
   .g-hero,.obs-item,.about{grid-template-columns:1fr}
   .process{grid-template-columns:repeat(2,1fr);row-gap:18px}
   .tech{grid-template-columns:1fr}
-  .tech article,.tech article+article{border-right:0;padding:20px 0 14px;border-bottom:1px solid var(--rule)}
+  .ov{grid-template-columns:repeat(2,1fr);row-gap:8px}
+  .ov div:nth-child(3){padding-left:0;border-left:0}
+  .tech article,.tech article:nth-child(even),.tech article:nth-child(n+3){border-right:0;border-top:0;padding:20px 0 14px;border-bottom:1px solid var(--rule)}
 }
 @media (max-width:560px){
   .nav ul{display:none}
@@ -152,6 +166,8 @@ footer .wrap{padding-block:48px;display:flex;flex-wrap:wrap;justify-content:spac
   .g3{grid-template-columns:repeat(2,1fr)}
   .g2{grid-template-columns:1fr}
   .process{grid-template-columns:1fr}
+  .ov{grid-template-columns:1fr}
+  .ov div+div{padding-left:0;border-left:0;border-top:1px solid var(--rule)}
 }
 </style>
 </head>
@@ -184,13 +200,28 @@ footer .wrap{padding-block:48px;display:flex;flex-wrap:wrap;justify-content:spac
   </div>
 </header>
 
+<section class="overview" aria-label="一覽">
+  <div class="wrap">
+    <div class="ov">
+      <div><h2>動手做</h2><p>3D 列印・木工・通用設計</p>
+        <ul><li><a href="#spoon">小匙・三合一磁吸湯匙</a></li><li><a href="#ud">通用設計四個專題</a></li><li><a href="#label">接住你 標籤設計</a></li><li><a href="#lamp">木工燈具（製作中）</a></li></ul></div>
+      <div><h2>視覺設計</h2><p>系學會、系露營美宣長</p>
+        <ul><li><a href="#csnight">資工之夜門票與節目單</a></li><li><a href="#booth">畢業拍貼框</a></li><li><a href="#posts">社群貼文與頭貼框</a></li></ul></div>
+      <div><h2>影像</h2><p>動畫・舞台與日常攝影</p>
+        <ul><li><a href="#pawprint">Pawprint of Memory</a></li><li><a href="#photo">攝影</a></li></ul></div>
+      <div><h2>技術</h2><p>電腦視覺・3D 重建・機器人學習</p>
+        <ul><li><a href="#tech">CityLayer</a></li><li><a href="#tech">Physical AI</a></li><li><a href="#tech">CAT 陪伴裝置</a></li><li><a href="#tech">LINE FRESH 生活紀錄</a></li></ul></div>
+    </div>
+  </div>
+</section>
+
 <section class="block" id="works">
   <div class="wrap">
     <h2 class="sec-h">作品<span>Works</span></h2>
     <div class="sec-body">
 
       <!-- 小匙 -->
-      <article class="work">
+      <article class="work" id="spoon">
         <div class="work-head">
           <div class="course"><b>數位設計與製造</b>114 學年上學期</div>
           <h3>小匙・三合一磁吸湯匙<small>3D 列印・不鏽鋼設定</small></h3>
@@ -214,10 +245,11 @@ footer .wrap{padding-block:48px;display:flex;flex-wrap:wrap;justify-content:spac
           <figure><div class="frame"><img src="img/spoon-v1.jpg" alt="第一版 3D 列印湯匙"></div><figcaption>第一版</figcaption></figure>
           <figure><div class="frame"><img src="img/spoon-v2.jpg" alt="第二版 3D 列印湯匙，大湯匙疊在中湯匙上"></div><figcaption>第二版</figcaption></figure>
         </div>
+        <p class="more"><a href="files/spoon-portfolio.pdf" target="_blank" rel="noopener">完整作品集（PDF，4 頁）</a></p>
       </article>
 
       <!-- 通用設計 -->
-      <article class="work">
+      <article class="work" id="ud">
         <div class="work-head">
           <div class="course"><b>通用設計與實作</b>114 學年下學期</div>
           <h3>讓人獨立，而不是依賴<small>四個通用設計專題</small></h3>
@@ -232,10 +264,11 @@ footer .wrap{padding-block:48px;display:flex;flex-wrap:wrap;justify-content:spac
           <p>之後的三個專題都從具體的使用困難出發：單手也能撕的公共廁所衛生紙架、用側壓槓桿和配重軟管改造的洗手乳瓶，以及給新手和長者的睫毛夾。睫毛夾加上透明導視框和矽膠防夾護翼，並規劃各零件的材料與製程：PC 射出、矽膠模壓、不鏽鋼沖壓。</p>
         </div>
         <p class="quote">真正通用的設計，不應該讓人感到依賴，而應該讓人獨立。</p>
+        <p class="more"><a href="files/universal-design-portfolio.pdf" target="_blank" rel="noopener">完整作品集（PDF，12 頁）</a></p>
       </article>
 
       <!-- 接住你 -->
-      <article class="work">
+      <article class="work" id="label">
         <div class="work-head">
           <div class="course"><b>基本設計初階</b>115 學年上學期・期中</div>
           <h3>接住你 Caught Drops<small>標籤設計</small><span class="tag">修課中</span></h3>
@@ -247,7 +280,7 @@ footer .wrap{padding-block:48px;display:flex;flex-wrap:wrap;justify-content:spac
       </article>
 
       <!-- Pawprint -->
-      <article class="work">
+      <article class="work" id="pawprint">
         <div class="work-head">
           <div class="course"><b>電腦動畫與特效</b>113 學年下學期・研究所課程</div>
           <h3>Pawprint of Memory<small>Blender 動畫短片・約一分鐘</small></h3>
@@ -259,7 +292,7 @@ footer .wrap{padding-block:48px;display:flex;flex-wrap:wrap;justify-content:spac
         <div class="text">
           <p>意外過世的女孩，靈魂暫時寄住在一隻流浪貓身上。牠走過城市，在麵攤前遇見正在工作的媽媽。媽媽摸頭的那一刻喚醒了記憶，她認出這是女兒，用貓咪的身體補上了沒能說出口的告別。</p>
           <p>兩人小組完成。我負責鏡頭設計與角色動畫，並參與骨架綁定、算繪與剪輯。為了讓貓的動作自然，我們先看真實的貓咪影片，再一個一個復刻走路、喝水、搖尾巴的動作。</p>
-          <p><a href="https://youtu.be/bq9b_xUh20c" target="_blank" rel="noopener">觀看完整動畫（YouTube）</a></p>
+          <p class="more"><a href="https://youtu.be/bq9b_xUh20c" target="_blank" rel="noopener">觀看完整動畫（YouTube）</a><a href="files/pawprint-report.pdf" target="_blank" rel="noopener">製作報告（PDF）</a></p>
         </div>
         <div class="g3">
           <figure><div class="frame"><img src="img/anim-rig.jpg" alt="貓咪骨架綁定的 Blender 畫面"></div><figcaption>以 Rigify 綁定骨架</figcaption></figure>
@@ -269,7 +302,7 @@ footer .wrap{padding-block:48px;display:flex;flex-wrap:wrap;justify-content:spac
       </article>
 
       <!-- 木工燈具 -->
-      <article class="work">
+      <article class="work" id="lamp">
         <div class="work-head">
           <div class="course"><b>模型製作與材料</b>115 學年上學期</div>
           <h3>木工燈具<span class="tag">製作中</span></h3>
@@ -290,7 +323,7 @@ footer .wrap{padding-block:48px;display:flex;flex-wrap:wrap;justify-content:spac
     <div class="sec-body">
       <p class="sec-note">擔任資工系學會、系露營美宣長，和另一位美宣長一起負責系上活動的視覺：海報、社群貼文、票券、節目單，到畢業典禮的拍貼框。每件都要在很小的版面裡，讓人一眼看懂活動是什麼。</p>
 
-      <article class="work">
+      <article class="work" id="csnight">
         <div class="work-head">
           <div class="course"><b>2026 資工之夜</b>Croissant・5／20 交大大禮堂</div>
           <h3>門票、節目單與宣傳動畫</h3>
@@ -303,11 +336,11 @@ footer .wrap{padding-block:48px;display:flex;flex-wrap:wrap;justify-content:spac
         <div class="text">
           <p>門票和節目單的排版由我負責，主視覺的人物插畫是另一位美宣長繪製。宣傳動畫由我畫所有場景背景，並參與腳本討論。印刷品也由我們聯絡廠商、確認打樣到交件。</p>
           <p>這次的印刷品我們印了兩次。第一次拿到成品才發現，主視覺的紅色印出來太像咖啡色；節目單、門票和海報用的紙材不同，同一個紅色印在三種紙上也各不相同。我們依照每種紙材分別微調顏色，第二次才讓三件印刷品看起來是同一套。從那之後我知道，設計要等到變成實物，才算真正完成。</p>
-          <p><a href="https://www.instagram.com/reel/DYJujH9y2qk/" target="_blank" rel="noopener">觀看資工之夜宣傳片（Instagram）</a></p>
+          <p class="more"><a href="https://www.instagram.com/reel/DYJujH9y2qk/" target="_blank" rel="noopener">觀看資工之夜宣傳片（Instagram）</a></p>
         </div>
       </article>
 
-      <article class="work">
+      <article class="work" id="booth">
         <div class="work-head">
           <div class="course"><b>資工系 15 級小畢典</b>2026／06／13</div>
           <h3>畢業拍貼框</h3>
@@ -321,14 +354,14 @@ footer .wrap{padding-block:48px;display:flex;flex-wrap:wrap;justify-content:spac
         </div>
       </article>
 
-      <article class="work">
+      <article class="work" id="posts">
         <div class="work-head">
           <div class="course"><b>社群貼文與頭貼框</b>資工系學會・系露營</div>
           <h3>活動貼文</h3>
         </div>
         <div class="g3">
           <figure><div class="frame plain"><img src="img/vd-wistron.jpg" alt="緯創企業參訪貼文"></div><figcaption>企業參訪貼文</figcaption></figure>
-          <figure><div class="frame plain"><img src="img/vd-wine.jpg" alt="紅底放射線背景的活動海報，標題你這輩子酒這樣了"></div><figcaption>系學會飲酒活動海報（中央插畫為 AI 生成，排版為本人設計）</figcaption></figure>
+          <figure><div class="frame plain"><img src="img/vd-welcome.jpg" alt="黑底金箔質感的迎新茶會貼文，列出南、中、北三區場次"></div><figcaption>迎新茶會貼文：南、中、北三區場次</figcaption></figure>
           <figure><div class="frame plain"><img src="img/vd-frame.jpg" alt="手繪風格的系露營頭貼框，有麥克風、音符與播放鍵"></div><figcaption>2025 系露營頭貼框：「楊晟」為營隊名稱</figcaption></figure>
         </div>
       </article>
@@ -340,25 +373,39 @@ footer .wrap{padding-block:48px;display:flex;flex-wrap:wrap;justify-content:spac
   <div class="wrap">
     <h2 class="sec-h">技術 × 設計<span>Tech</span></h2>
     <div class="sec-body">
-      <p class="sec-note">資工本科裡，這三個專案最接近設計：它們處理的都是人怎麼看、怎麼做、怎麼和東西互動。</p>
+      <p class="sec-note">資工本科裡，這四個專案最接近設計：它們處理的都是人怎麼看、怎麼做、怎麼和東西互動。</p>
       <figure><div class="frame"><img src="img/city-trans.jpg" alt="CityLayer 兩個街景場景之間的銜接畫面"></div><figcaption>CityLayer：兩個獨立街景場景之間的對齊與切換</figcaption></figure>
-      <div class="tech">
+      <div class="tech" id="tech-cards">
         <article>
           <h3>CityLayer</h3>
           <p>資訊工程專題。把單張街景全景圖依深度分層、補上被遮住的區域，各自訓練 3D Gaussian Splatting，讓使用者能在場景之間連續漫遊。我主要負責場景銜接模組。</p>
           <p class="bridge">延伸：把工房與窯場數位保存成可以線上漫遊的空間</p>
+          <p class="more"><a href="https://github.com/yiying10/CityLayer" target="_blank" rel="noopener">程式碼（GitHub）</a></p>
         </article>
         <article>
           <h3>Physical AI</h3>
           <p>人工智慧總整與實作期末專題。用 UMI 錄下人的示範動作，在 Isaac Lab 生成合成資料、訓練 diffusion policy，讓機械手臂學會疊杯、擺餐具，成功率 90%。我主要負責模型訓練與實驗比較。</p>
           <p class="bridge">延伸：記錄職人的手部動作，讓手藝變成可以傳授的知識</p>
+          <p class="more"><a href="https://github.com/annchenn/AIC-final-project-team5" target="_blank" rel="noopener">程式碼（GitHub）</a></p>
         </article>
         <article>
           <h3>CAT・Context-Aware boT</h3>
           <p class="award">2026 梅竹黑客松 AMD 組第一名・梅竹大賞第二名</p>
           <p>會記得你工作情境的毛絨貓陪伴裝置，結合 ESP32 感測與 AI 推論。我負責推論效能比較，以及裝置外觀的製作與設計。</p>
           <p class="bridge">延伸：讓技術藏在一個可以抱著的物件裡</p>
+          <p class="more"><a href="https://github.com/EthelHsiao/2026-Meichu-Hackthon" target="_blank" rel="noopener">程式碼（GitHub）</a></p>
         </article>
+        <article>
+          <h3>LINE FRESH 2025・LINE ツォンサー</h3>
+          <p class="award">約 100 隊中入選前 12 隊</p>
+          <p>一個零負擔的生活紀錄 LINE Bot：把零碎的文字和照片整理成每日、每週的回顧，幫人留住生活裡的小幸福。我主導產品規劃與 Figma 原型，負責使用者流程、功能架構與介面的資訊呈現，並用 322 份問卷驗證需求。</p>
+          <p class="bridge">延伸：從使用者的需求出發，而不是從功能出發</p>
+          <p class="more"><a href="https://youtu.be/nxdF80iGF9k" target="_blank" rel="noopener">展示影片（YouTube）</a></p>
+        </article>
+      </div>
+      <div class="g2" style="grid-template-columns:2.2fr 1fr;align-items:start">
+        <figure><div class="frame plain"><img src="img/lf-arch.jpg" alt="LINE ツォンサー 系統架構圖：紀錄、搜尋、回顧、目標追蹤四個功能，串接 Gemini、Vertex AI 與 Firebase"></div><figcaption>LINE ツォンサー：系統與功能架構</figcaption></figure>
+        <figure><div class="frame plain"><img src="img/lf-phone.jpg" alt="LINE ツォンサー 手機畫面：今日生活摘要"></div><figcaption>今日生活摘要畫面</figcaption></figure>
       </div>
     </div>
   </div>
@@ -378,10 +425,15 @@ footer .wrap{padding-block:48px;display:flex;flex-wrap:wrap;justify-content:spac
             <div class="course"><b>建築概論</b>113 學年下學期</div>
             <h3>台中火車站：新舊兩座站體</h3>
             <p>1917 年的紅磚舊站左右對稱、重量向下；2016 年的新站用大跨度鋼構和玻璃帷幕，把舊站包在視野裡。我從身體與尺度、結構與細部兩個角度，比較兩座建築如何回應不同時代的需求。</p>
+            <p class="more"><a href="files/taichung-station.pdf" target="_blank" rel="noopener">完整報告（PDF）</a></p>
           </div>
         </div>
         <div class="obs-item">
-          <div class="text" style="grid-column:1/-1">
+          <div class="g2" style="grid-template-columns:1fr">
+            <figure><div class="frame plain"><img src="img/pei-structure.jpg" alt="路思義教堂外部構成分析：四面不相接雙曲面薄殼牆的立面與平面圖"></div><figcaption>報告頁面：外部構成</figcaption></figure>
+            <figure><div class="frame plain"><img src="img/pei-plan.jpg" alt="路思義教堂內部構成分析：聖壇與會眾席的平面圖"></div><figcaption>報告頁面：內部構成</figcaption></figure>
+          </div>
+          <div class="text">
             <div class="course"><b>建築與環境概論</b>114 學年下學期・小組報告</div>
             <h3>路思義教堂：貝聿銘與陳其寬</h3>
             <p>分析東海大學路思義教堂的空間組織、動線與結構：四片雙曲面薄殼如何同時回應氣候、預算與「讓全校都看得見」的紀念性，以及兩位建築師如何在現代主義裡放進中國建築的意象。</p>
@@ -393,6 +445,7 @@ footer .wrap{padding-block:48px;display:flex;flex-wrap:wrap;justify-content:spac
             <div class="course"><b>科技藝術概論</b>114 學年下學期</div>
             <h3>用 AI 重新詮釋藝術流派</h3>
             <p>以達達主義、立體主義、抽象表現主義為題，用生成式 AI 創作三張圖，並記錄每次調整提示詞的原因。《打橋牌的女孩》畫的是我自己：橋牌是興趣，也帶來壓力，所以用深色表現緊繃，用歡呼的手勢表現打好一手牌的快樂。</p>
+            <p class="more"><a href="files/tech-art-final.pdf" target="_blank" rel="noopener">完整報告（PDF）</a></p>
           </div>
         </div>
       </div>
@@ -452,7 +505,7 @@ footer .wrap{padding-block:48px;display:flex;flex-wrap:wrap;justify-content:spac
         <dl>
           <div><dt>視覺與活動</dt><dd>資工系學會美宣長，負責系上活動的視覺設計<br>Smrangi 山福團：尖石鄉泰雅文苑服務隊總召，帶領 50 位工作人員</dd></div>
           <div><dt>橋牌</dt><dd>U26 女子青年隊隊長<br>第 13 屆世界大學心智運動錦標賽選拔賽第 3 名</dd></div>
-          <div><dt>連結</dt><dd><a href="https://github.com/tingyun1412" target="_blank" rel="noopener">GitHub：tingyun1412</a></dd></div>
+          <div><dt>聯絡</dt><dd>michellehuang0523@gmail.com<br><a href="https://github.com/tingyun1412" target="_blank" rel="noopener">GitHub：tingyun1412</a></dd></div>
         </dl>
       </div>
     </div>
