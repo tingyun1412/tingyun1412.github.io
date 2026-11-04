@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="黃庭筠的跨域設計作品集：手作、通用設計、動畫、視覺設計與攝影。">
+<title>黃庭筠 作品集</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap">
+<style>
+/* Layout: 和紙のような余白。左に縦書きの見出し、右に作品。金箔色を一点だけ使う。 */
+:root{
+  --paper:#F2F1ED;      /* 胡粉に近い、わずかに青みのある白 */
+  --paper-2:#E9E7E1;    /* 一段沈んだ面 */
+  --ink:#26272A;        /* 墨 */
+  --ink-2:#5E5F63;      /* 薄墨 */
+  --ink-3:#8C8C8E;      /* 鼠 */
+  --rule:#D3D0C8;
+  --gold:#9C7A43;       /* 金箔を沈めた色 */
+  --indigo:#3C5263;     /* 藍鼠 */
+  --serif:"Noto Serif TC","Source Han Serif TC","思源宋體","Songti TC","PMingLiU",serif;
+  --s-xs:.8125rem; --s-sm:.9375rem; --s-md:1.0625rem; --s-lg:1.375rem; --s-xl:2rem; --s-xxl:clamp(2.6rem,7vw,4.6rem);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#161719; --paper-2:#1F2023; --ink:#E7E5DF; --ink-2:#B3B1AB; --ink-3:#85847F; --rule:#34353A; --gold:#C9A66B; --indigo:#8FA7B8; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#161719; --paper-2:#1F2023; --ink:#E7E5DF; --ink-2:#B3B1AB; --ink-3:#85847F; --rule:#34353A; --gold:#C9A66B; --indigo:#8FA7B8; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:var(--s-md);line-height:1.95;letter-spacing:.04em;font-weight:400;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule);transition:border-color .2s,color .2s}
+a:hover{color:var(--gold);border-color:var(--gold)}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+h1,h2,h3,h4{font-weight:500;margin:0;text-wrap:balance;letter-spacing:.08em}
+p{margin:0}
+
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* ナビ */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(6px);border-bottom:1px solid var(--rule)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.nav .mark{font-size:var(--s-sm);letter-spacing:.3em;border:0}
+.nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px 22px;margin:0;padding:0;font-size:var(--s-xs);letter-spacing:.2em;color:var(--ink-2)}
+.nav ul a{border:0}
+
+/* ヒーロー */
+.hero .wrap{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,7vw,96px);padding-block:clamp(64px,12vw,140px) clamp(48px,8vw,96px);align-items:start}
+.hero .v{writing-mode:vertical-rl;font-size:var(--s-xxl);font-weight:600;letter-spacing:.32em;line-height:1.2;color:var(--ink)}
+.hero .v small{display:block;font-size:var(--s-sm);font-weight:400;letter-spacing:.4em;color:var(--ink-3);margin-right:18px}
+.hero .lead{display:grid;gap:28px;align-content:start;padding-top:12px;min-width:0}
+.hero .kicker{font-size:var(--s-xs);letter-spacing:.35em;color:var(--gold)}
+.hero h1{font-size:clamp(1.6rem,3.6vw,2.4rem);line-height:1.6;font-weight:400}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .intro{max-width:34em;color:var(--ink-2)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:var(--s-xs);color:var(--ink-3);letter-spacing:.15em;border-top:1px solid var(--rule);padding-top:18px}
+
+/* セクション */
+section.block{border-top:1px solid var(--rule)}
+section.block>.wrap{display:grid;grid-template-columns:72px 1fr;gap:clamp(20px,5vw,64px);padding-block:clamp(56px,9vw,112px)}
+.sec-h{writing-mode:vertical-rl;font-size:var(--s-xl);letter-spacing:.5em;font-weight:500;line-height:1;position:sticky;top:calc(env(safe-area-inset-top,0px) + 84px);align-self:start;height:max-content}
+.sec-h span{display:block;font-size:var(--s-xs);letter-spacing:.35em;color:var(--ink-3);margin-right:14px;font-weight:400}
+.sec-body{display:grid;gap:clamp(64px,10vw,120px);min-width:0}
+.sec-note{max-width:36em;color:var(--ink-2);font-size:var(--s-sm)}
+
+/* 作品 */
+.work{display:grid;gap:28px;min-width:0}
+.work-head{display:grid;gap:10px}
+.course{font-size:var(--s-xs);letter-spacing:.25em;color:var(--ink-3)}
+.course b{font-weight:500;color:var(--gold);margin-right:.6em}
+.work h3{font-size:var(--s-lg);line-height:1.6}
+.work h3 small{font-size:var(--s-sm);color:var(--ink-3);margin-left:.8em;letter-spacing:.12em;font-weight:400}
+.work .text{max-width:36em;display:grid;gap:1em;color:var(--ink-2)}
+.tag{display:inline-block;font-size:var(--s-xs);letter-spacing:.2em;color:var(--indigo);border:1px solid currentColor;padding:0 .7em;line-height:1.9;margin-left:.6em;vertical-align:.15em}
+
+figure{margin:0;display:grid;gap:8px;min-width:0}
+figcaption{font-size:var(--s-xs);color:var(--ink-3);letter-spacing:.12em;line-height:1.7}
+.frame{background:var(--paper-2);overflow:hidden}
+.frame img{width:100%;object-fit:cover}
+
+.g-hero{display:grid;grid-template-columns:1.35fr 1fr;gap:14px}
+.g-hero .frame img{aspect-ratio:4/3}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.g3 .frame img{aspect-ratio:4/3}
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.g2 .frame img{aspect-ratio:16/9}
+
+/* 工程の記録 */
+.process{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
+.process li{padding:16px 16px 0 0;display:grid;gap:6px;align-content:start;min-width:0}
+.process .st{font-size:var(--s-xs);letter-spacing:.25em;color:var(--gold)}
+.process h4{font-size:var(--s-sm);letter-spacing:.1em}
+.process p{font-size:var(--s-xs);color:var(--ink-2);line-height:1.85;letter-spacing:.06em}
+
+/* 一行引用 */
+.quote{font-size:var(--s-md);color:var(--ink);border-left:1px solid var(--gold);padding-left:18px;max-width:30em;letter-spacing:.12em}
+
+/* 準備中 */
+.soon{border:1px dashed var(--rule);padding:28px;display:grid;gap:8px;color:var(--ink-2)}
+.soon .st{font-size:var(--s-xs);letter-spacing:.3em;color:var(--gold)}
+
+/* 技術カード */
+.tech{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink)}
+.tech article{padding:22px 22px 6px 0;display:grid;gap:10px;align-content:start;min-width:0;border-right:1px solid var(--rule);padding-left:0}
+.tech article+article{padding-left:22px}
+.tech article:last-child{border-right:0}
+.tech h3{font-size:var(--s-md)}
+.tech p{font-size:var(--s-sm);color:var(--ink-2);line-height:1.9}
+.tech .bridge{font-size:var(--s-xs);color:var(--indigo);letter-spacing:.1em;line-height:1.8;border-top:1px solid var(--rule);padding-top:10px}
+.award{font-size:var(--s-xs);color:var(--gold);letter-spacing:.15em}
+
+/* 観察 */
+.obs{display:grid;gap:56px}
+.obs-item{display:grid;grid-template-columns:1fr 1.1fr;gap:28px;align-items:start}
+.obs-item .text{display:grid;gap:10px;min-width:0}
+.obs-item .text p{font-size:var(--s-sm);color:var(--ink-2)}
+
+/* 略歴 */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px 56px}
+.about dl{margin:0;display:grid;gap:18px}
+.about dt{font-size:var(--s-xs);letter-spacing:.3em;color:var(--gold)}
+.about dd{margin:4px 0 0;font-size:var(--s-sm);color:var(--ink-2);line-height:1.9}
+.about dd b{color:var(--ink);font-weight:500}
+
+footer .wrap{padding-block:48px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:var(--s-xs);color:var(--ink-3);letter-spacing:.2em;border-top:1px solid var(--rule)}
+
+.frame.plain{background:transparent}
+.frame.plain img{aspect-ratio:auto!important;object-fit:contain;box-shadow:0 1px 0 var(--rule)}
+.photos{columns:3 260px;column-gap:12px}
+.ph-h{font-size:var(--s-sm);letter-spacing:.4em;color:var(--ink-2);border-bottom:1px solid var(--rule);padding-bottom:8px;margin-bottom:-40px}
+.ph{break-inside:avoid;margin:0 0 12px;background:var(--paper-2)}
+.ph img{width:100%}
+@media (max-width:820px){
+  .g-hero,.obs-item,.about{grid-template-columns:1fr}
+  .process{grid-template-columns:repeat(2,1fr);row-gap:18px}
+  .tech{grid-template-columns:1fr}
+  .tech article,.tech article+article{border-right:0;padding:20px 0 14px;border-bottom:1px solid var(--rule)}
+}
+@media (max-width:560px){
+  .nav ul{display:none}
+  .hero .wrap{grid-template-columns:1fr;gap:28px}
+  .hero .v{writing-mode:horizontal-tb;letter-spacing:.2em}
+  .hero .v small{margin:8px 0 0}
+  section.block>.wrap{grid-template-columns:1fr;gap:28px}
+  .sec-h{writing-mode:horizontal-tb;position:static;letter-spacing:.3em}
+  .sec-h span{display:inline;margin:0 0 0 12px}
+  .g3{grid-template-columns:repeat(2,1fr)}
+  .g2{grid-template-columns:1fr}
+  .process{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+
+<nav class="nav" aria-label="主要">
+  <div class="wrap">
+    <a class="mark" href="#top">黃庭筠</a>
+    <ul>
+      <li><a href="#works">作品</a></li>
+      <li><a href="#visual">視覺</a></li>
+      <li><a href="#tech">技術 × 設計</a></li>
+      <li><a href="#notes">觀察</a></li>
+      <li><a href="#photo">攝影</a></li>
+      <li><a href="#about">關於</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="v">黃庭筠<small>Huang Ting-Yun</small></div>
+    <div class="lead">
+      <div class="kicker">資訊工程 × 設計與創新科技</div>
+      <h1>用寫程式的耐心，<br>做出<em>手</em>可以感覺到的東西。</h1>
+      <p class="intro">國立陽明交通大學資訊工程學系大四，修習「設計與創新科技跨域學程」。在程式之外，我用 3D 列印、木工和平面設計動手做東西，也用鏡頭記錄舞台上的瞬間。這裡收錄我在跨域課程裡完成的作品，和幾個把技術用在設計上的專案。</p>
+      <div class="meta"><span>國立陽明交通大學</span><span>資訊工程學系</span><span>設計與創新科技跨域學程</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="block" id="works">
+  <div class="wrap">
+    <h2 class="sec-h">作品<span>Works</span></h2>
+    <div class="sec-body">
+
+      <!-- 小匙 -->
+      <article class="work">
+        <div class="work-head">
+          <div class="course"><b>數位設計與製造</b>114 學年上學期</div>
+          <h3>小匙・三合一磁吸湯匙<small>3D 列印・不鏽鋼設定</small></h3>
+        </div>
+        <div class="g-hero">
+          <figure><div class="frame"><img src="img/spoon-final.jpg" alt="最終版三合一湯匙，放在木桌上"></div><figcaption>最終版：三支湯匙以磁鐵組合成一支</figcaption></figure>
+          <figure><div class="frame"><img src="img/spoon-final-hand.jpg" alt="手持最終版湯匙，磁鐵撐住大湯匙"></div><figcaption>加厚磁鐵、增加顆數後，成功撐住中湯匙與大湯匙</figcaption></figure>
+        </div>
+        <div class="text">
+          <p>喝湯要深的湯匙，吃甜點適合小湯匙，但外食族通常只帶一支環保湯匙。我想做一支能換三種尺寸、又方便攜帶的湯匙。</p>
+          <p>期中的第一版參考折疊式安全帽與筆電轉軸，做成可折疊、可旋轉的結構。實際建模後發現需要直徑約 2mm 的轉軸，市面上買不到，螺紋也小到無法密合，於是改成磁吸。之後又印了三個版本，每一版都在修正上一版的問題。</p>
+        </div>
+        <ol class="process" aria-label="製作過程">
+          <li><span class="st">期中</span><h4>折疊與轉軸</h4><p>參考安全帽滑軌與筆電轉軸。2mm 轉軸找不到、螺紋無法密合。</p></li>
+          <li><span class="st">第一版</span><h4>改為磁吸</h4><p>湯匙太小、太短。重新量測一般湯匙尺寸後修改。</p></li>
+          <li><span class="st">第二版</span><h4>修正尺寸</h4><p>磁鐵孔公差太小，放不進去；一顆磁鐵撐不住中湯匙的重量。</p></li>
+          <li><span class="st">最終版</span><h4>加厚、加量</h4><p>換更厚、磁力更強的磁鐵並增加顆數，縮短手柄力矩。</p></li>
+        </ol>
+        <div class="g3">
+          <figure><div class="frame"><img src="img/spoon-sketch.jpg" alt="湯匙手繪設計圖，標示尺寸與折疊方式"></div><figcaption>期中手繪設計圖</figcaption></figure>
+          <figure><div class="frame"><img src="img/spoon-v1.jpg" alt="第一版 3D 列印湯匙"></div><figcaption>第一版</figcaption></figure>
+          <figure><div class="frame"><img src="img/spoon-v2.jpg" alt="第二版 3D 列印湯匙，大湯匙疊在中湯匙上"></div><figcaption>第二版</figcaption></figure>
+        </div>
+      </article>
+
+      <!-- 通用設計 -->
+      <article class="work">
+        <div class="work-head">
+          <div class="course"><b>通用設計與實作</b>114 學年下學期</div>
+          <h3>讓人獨立，而不是依賴<small>四個通用設計專題</small></h3>
+        </div>
+        <div class="g3">
+          <figure><div class="frame"><img src="img/ud-stairs.jpg" alt="同學拄拐杖走樓梯的障礙體驗"></div><figcaption>障礙體驗：拄杖走樓梯</figcaption></figure>
+          <figure><div class="frame"><img src="img/ud-rain.jpg" alt="雨天濕滑路面的障礙體驗"></div><figcaption>雨天路滑</figcaption></figure>
+          <figure><div class="frame"><img src="img/ud-shelf.jpg" alt="在便利商店貨架前辨識商品"></div><figcaption>感官退化：看不清標價</figcaption></figure>
+        </div>
+        <div class="text">
+          <p>從一次校園障礙體驗開始。我負責照顧模擬感官退化的同學，一路幫她念標示、提醒路況，才發現原本理所當然的資訊，對她來說都成了障礙。</p>
+          <p>之後的三個專題都從具體的使用困難出發：單手也能撕的公共廁所衛生紙架、用側壓槓桿和配重軟管改造的洗手乳瓶，以及給新手和長者的睫毛夾。睫毛夾加上透明導視框和矽膠防夾護翼，並規劃各零件的材料與製程：PC 射出、矽膠模壓、不鏽鋼沖壓。</p>
+        </div>
+        <p class="quote">真正通用的設計，不應該讓人感到依賴，而應該讓人獨立。</p>
+      </article>
+
+      <!-- 接住你 -->
+      <article class="work">
+        <div class="work-head">
+          <div class="course"><b>基本設計初階</b>115 學年上學期・期中</div>
+          <h3>接住你 Caught Drops<small>標籤設計</small><span class="tag">修課中</span></h3>
+        </div>
+        <figure><div class="frame"><img src="img/label.jpg" alt="仿藥品標籤的設計：成分是傾聽、同理、界線，標語是在你接住別人的時候，別忘了接住自己"></div><figcaption>以藥品標籤的格式，寫一份給「總是在接住別人的人」的說明書</figcaption></figure>
+        <div class="text">
+          <p>借用藥品標籤的語言：成分是傾聽、同理、界線各 30%，加上一個大大的擁抱；警告寫著「本產品無法解決他人問題，僅提供陪伴」；保存方式是「置於陰涼處，避免長期暴露在他人情緒之下」。酸鹼值的穩定區間 6.5–7.5，是情緒能保持平衡的範圍。</p>
+        </div>
+      </article>
+
+      <!-- Pawprint -->
+      <article class="work">
+        <div class="work-head">
+          <div class="course"><b>電腦動畫與特效</b>113 學年下學期・研究所課程</div>
+          <h3>Pawprint of Memory<small>Blender 動畫短片・約一分鐘</small></h3>
+        </div>
+        <div class="g2">
+          <figure><div class="frame"><img src="img/anim-dusk.jpg" alt="動畫場景：黃昏的台灣街道"></div><figcaption>第八幕：街燈亮起</figcaption></figure>
+          <figure><div class="frame"><img src="img/anim-water.jpg" alt="動畫場景：流浪貓舔地上的水"></div><figcaption>第四幕：舔水</figcaption></figure>
+        </div>
+        <div class="text">
+          <p>意外過世的女孩，靈魂暫時寄住在一隻流浪貓身上。牠走過城市，在麵攤前遇見正在工作的媽媽。媽媽摸頭的那一刻喚醒了記憶，她認出這是女兒，用貓咪的身體補上了沒能說出口的告別。</p>
+          <p>兩人小組完成。我負責鏡頭設計與角色動畫，並參與骨架綁定、算繪與剪輯。為了讓貓的動作自然，我們先看真實的貓咪影片，再一個一個復刻走路、喝水、搖尾巴的動作。</p>
+          <p><a href="https://youtu.be/bq9b_xUh20c" target="_blank" rel="noopener">觀看完整動畫（YouTube）</a></p>
+        </div>
+        <div class="g3">
+          <figure><div class="frame"><img src="img/anim-rig.jpg" alt="貓咪骨架綁定的 Blender 畫面"></div><figcaption>以 Rigify 綁定骨架</figcaption></figure>
+          <figure><div class="frame"><img src="img/anim-walk.jpg" alt="貓咪走路動作"></div><figcaption>walkcycle：參考真實影片復刻</figcaption></figure>
+          <figure><div class="frame"><img src="img/anim-stall.jpg" alt="麵攤場景的 Blender 模型"></div><figcaption>場景：媽媽的麵攤</figcaption></figure>
+        </div>
+      </article>
+
+      <!-- 木工燈具 -->
+      <article class="work">
+        <div class="work-head">
+          <div class="course"><b>模型製作與材料</b>115 學年上學期</div>
+          <h3>木工燈具<span class="tag">製作中</span></h3>
+        </div>
+        <div class="soon">
+          <span class="st">預計 11 月底更新</span>
+          <p>目前正在修習中。完成後會補上材料選擇、加工過程與成品照片。</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="block" id="visual">
+  <div class="wrap">
+    <h2 class="sec-h">視覺設計<span>Visual</span></h2>
+    <div class="sec-body">
+      <p class="sec-note">擔任資工系學會、系露營美宣長，和另一位美宣長一起負責系上活動的視覺：海報、社群貼文、票券、節目單，到畢業典禮的拍貼框。每件都要在很小的版面裡，讓人一眼看懂活動是什麼。</p>
+
+      <article class="work">
+        <div class="work-head">
+          <div class="course"><b>2026 資工之夜</b>Croissant・5／20 交大大禮堂</div>
+          <h3>門票、節目單與宣傳動畫</h3>
+        </div>
+        <div class="g2" style="grid-template-columns:1fr 1fr">
+          <figure><div class="frame plain"><img src="img/vd-ticket-front.jpg" alt="資工之夜門票正面，可頌主視覺與 TICKET 字樣"></div><figcaption>門票正面</figcaption></figure>
+          <figure><div class="frame plain"><img src="img/vd-ticket-back.jpg" alt="資工之夜門票背面，贊助商標誌"></div><figcaption>門票背面：贊助致謝</figcaption></figure>
+        </div>
+        <figure><div class="frame plain"><img src="img/vd-program-cover.jpg" alt="資工之夜節目單封面，格紋底與可頌主視覺"></div><figcaption>節目單</figcaption></figure>
+        <div class="text">
+          <p>門票和節目單的排版由我負責，主視覺的人物插畫是另一位美宣長繪製。宣傳動畫由我畫所有場景背景，並參與腳本討論。印刷品也由我們聯絡廠商、確認打樣到交件。</p>
+          <p>這次的印刷品我們印了兩次。第一次拿到成品才發現，主視覺的紅色印出來太像咖啡色；節目單、門票和海報用的紙材不同，同一個紅色印在三種紙上也各不相同。我們依照每種紙材分別微調顏色，第二次才讓三件印刷品看起來是同一套。從那之後我知道，設計要等到變成實物，才算真正完成。</p>
+          <p><a href="https://www.instagram.com/reel/DYJujH9y2qk/" target="_blank" rel="noopener">觀看資工之夜宣傳片（Instagram）</a></p>
+        </div>
+      </article>
+
+      <article class="work">
+        <div class="work-head">
+          <div class="course"><b>資工系 15 級小畢典</b>2026／06／13</div>
+          <h3>畢業拍貼框</h3>
+        </div>
+        <div class="g2" style="grid-template-columns:1fr 1fr">
+          <figure><div class="frame plain"><img src="img/vd-photobooth-film.jpg" alt="黑底底片格拍貼框，金色與白色兩款 Happy Graduation"></div><figcaption>底片款：左邊寫給青春，右邊寫給崩潰</figcaption></figure>
+          <figure><div class="frame plain"><img src="img/vd-photobooth-ig.jpg" alt="方格紙底的 Instagram 貼文樣式拍貼框"></div><figcaption>貼文款：手繪線條與 #END NYCUCS</figcaption></figure>
+        </div>
+        <div class="text">
+          <p>底片款兩條膠卷上的標語，字首都拼出 NYCU：一邊是「Nourishing、Youthful、Celebrate、Unlimited」，另一邊是「Nervous、Yelling、Crying、Useless」，是資工系四年的兩面。</p>
+        </div>
+      </article>
+
+      <article class="work">
+        <div class="work-head">
+          <div class="course"><b>社群貼文與頭貼框</b>資工系學會・系露營</div>
+          <h3>活動貼文</h3>
+        </div>
+        <div class="g3">
+          <figure><div class="frame plain"><img src="img/vd-wistron.jpg" alt="緯創企業參訪貼文"></div><figcaption>企業參訪貼文</figcaption></figure>
+          <figure><div class="frame plain"><img src="img/vd-wine.jpg" alt="紅底放射線背景的活動海報，標題你這輩子酒這樣了"></div><figcaption>系學會飲酒活動海報（中央插畫為 AI 生成，排版為本人設計）</figcaption></figure>
+          <figure><div class="frame plain"><img src="img/vd-frame.jpg" alt="手繪風格的系露營頭貼框，有麥克風、音符與播放鍵"></div><figcaption>2025 系露營頭貼框：「楊晟」為營隊名稱</figcaption></figure>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="tech">
+  <div class="wrap">
+    <h2 class="sec-h">技術 × 設計<span>Tech</span></h2>
+    <div class="sec-body">
+      <p class="sec-note">資工本科裡，這三個專案最接近設計：它們處理的都是人怎麼看、怎麼做、怎麼和東西互動。</p>
+      <figure><div class="frame"><img src="img/city-trans.jpg" alt="CityLayer 兩個街景場景之間的銜接畫面"></div><figcaption>CityLayer：兩個獨立街景場景之間的對齊與切換</figcaption></figure>
+      <div class="tech">
+        <article>
+          <h3>CityLayer</h3>
+          <p>資訊工程專題。把單張街景全景圖依深度分層、補上被遮住的區域，各自訓練 3D Gaussian Splatting，讓使用者能在場景之間連續漫遊。我主要負責場景銜接模組。</p>
+          <p class="bridge">延伸：把工房與窯場數位保存成可以線上漫遊的空間</p>
+        </article>
+        <article>
+          <h3>Physical AI</h3>
+          <p>人工智慧總整與實作期末專題。用 UMI 錄下人的示範動作，在 Isaac Lab 生成合成資料、訓練 diffusion policy，讓機械手臂學會疊杯、擺餐具，成功率 90%。我主要負責模型訓練與實驗比較。</p>
+          <p class="bridge">延伸：記錄職人的手部動作，讓手藝變成可以傳授的知識</p>
+        </article>
+        <article>
+          <h3>CAT・Context-Aware boT</h3>
+          <p class="award">2026 梅竹黑客松 AMD 組第一名・梅竹大賞第二名</p>
+          <p>會記得你工作情境的毛絨貓陪伴裝置，結合 ESP32 感測與 AI 推論。我負責推論效能比較，以及裝置外觀的製作與設計。</p>
+          <p class="bridge">延伸：讓技術藏在一個可以抱著的物件裡</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="notes">
+  <div class="wrap">
+    <h2 class="sec-h">觀察<span>Notes</span></h2>
+    <div class="sec-body">
+      <div class="obs">
+        <div class="obs-item">
+          <div class="g2" style="grid-template-columns:1fr 1fr">
+            <figure><div class="frame"><img src="img/arch-roof.jpg" alt="台中火車站新站的弧形鋼構屋頂"></div></figure>
+            <figure><div class="frame"><img src="img/arch-old.jpg" alt="台中火車站紅磚舊站"></div></figure>
+          </div>
+          <div class="text">
+            <div class="course"><b>建築概論</b>113 學年下學期</div>
+            <h3>台中火車站：新舊兩座站體</h3>
+            <p>1917 年的紅磚舊站左右對稱、重量向下；2016 年的新站用大跨度鋼構和玻璃帷幕，把舊站包在視野裡。我從身體與尺度、結構與細部兩個角度，比較兩座建築如何回應不同時代的需求。</p>
+          </div>
+        </div>
+        <div class="obs-item">
+          <div class="text" style="grid-column:1/-1">
+            <div class="course"><b>建築與環境概論</b>114 學年下學期・小組報告</div>
+            <h3>路思義教堂：貝聿銘與陳其寬</h3>
+            <p>分析東海大學路思義教堂的空間組織、動線與結構：四片雙曲面薄殼如何同時回應氣候、預算與「讓全校都看得見」的紀念性，以及兩位建築師如何在現代主義裡放進中國建築的意象。</p>
+          </div>
+        </div>
+        <div class="obs-item">
+          <figure><div class="frame"><img src="img/art-bridge.jpg" alt="以達達主義風格生成的圖像：打橋牌的女孩"></div><figcaption>AI 生成（ChatGPT），提示詞與調整過程為本人撰寫</figcaption></figure>
+          <div class="text">
+            <div class="course"><b>科技藝術概論</b>114 學年下學期</div>
+            <h3>用 AI 重新詮釋藝術流派</h3>
+            <p>以達達主義、立體主義、抽象表現主義為題，用生成式 AI 創作三張圖，並記錄每次調整提示詞的原因。《打橋牌的女孩》畫的是我自己：橋牌是興趣，也帶來壓力，所以用深色表現緊繃，用歡呼的手勢表現打好一手牌的快樂。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="photo">
+  <div class="wrap">
+    <h2 class="sec-h">攝影<span>Photo</span></h2>
+    <div class="sec-body">
+      <p class="sec-note">燈光每秒都在變，表演者不停移動，能按下快門的瞬間只有一次。我習慣先觀察燈光和走位的節奏，再等那一刻。</p>
+      <h3 class="ph-h">舞台</h3>
+      <div class="photos">
+        <figure class="ph"><img src="img/photo-01.jpg" alt="演唱會場館全景：舞台上方的環形燈陣與觀眾席的手機燈光"></figure>
+        <figure class="ph"><img src="img/photo-02.jpg" alt="四位樂團成員在舞台上一起鞠躬"></figure>
+        <figure class="ph"><img src="img/photo-03.jpg" alt="橘髮歌手手按胸口演唱"></figure>
+        <figure class="ph"><img src="img/photo-04.jpg" alt="紙飛機從空中落下，樂團成員抬頭看"></figure>
+        <figure class="ph"><img src="img/photo-05.jpg" alt="綠色燈光下，歌手走到觀眾席旁"></figure>
+        <figure class="ph"><img src="img/photo-06.jpg" alt="彩帶飛舞中，樂團成員舉手歡呼"></figure>
+        <figure class="ph"><img src="img/photo-07.jpg" alt="藍色燈光中戴墨鏡的歌手"></figure>
+        <figure class="ph"><img src="img/photo-08.jpg" alt="黃色紙片落下，四人在舞台上大笑"></figure>
+        <figure class="ph"><img src="img/photo-09.jpg" alt="吉他手靠在主唱肩上一起演唱"></figure>
+        <figure class="ph"><img src="img/photo-10.jpg" alt="紫色燈光前戴墨鏡的歌手"></figure>
+        <figure class="ph"><img src="img/photo-11.jpg" alt="戶外舞台上揮手微笑的表演者"></figure>
+        <figure class="ph"><img src="img/photo-12.jpg" alt="橘髮表演者在台前蹲下靠近觀眾"></figure>
+        <figure class="ph"><img src="img/photo-13.jpg" alt="穿制服的表演者比愛心微笑"></figure>
+        <figure class="ph"><img src="img/photo-14.jpg" alt="穿白色西裝的表演者揮手"></figure>
+        <figure class="ph"><img src="img/photo-15.jpg" alt="2026 資工之夜舞蹈表演"></figure>
+      </div>
+      <h3 class="ph-h">日常</h3>
+      <div class="photos">
+        <figure class="ph"><img src="img/photo-18.jpg" alt="陽光從木窗灑進洗手台，橘色臉盆疊在綠色籃子上"></figure>
+        <figure class="ph"><img src="img/photo-17.jpg" alt="午後的商店街，招牌林立"></figure>
+        <figure class="ph"><img src="img/photo-19.jpg" alt="在木櫃上睡覺的三花貓"></figure>
+        <figure class="ph"><img src="img/photo-20.jpg" alt="拿在手上的糖葫蘆，背景是整排水果串"></figure>
+        <figure class="ph"><img src="img/photo-21.jpg" alt="夕陽下停泊在碼頭的漁船船頭與繫纜柱"></figure>
+        <figure class="ph"><img src="img/photo-16.jpg" alt="社區公園的溜滑梯與街邊洗衣店"></figure>
+        <figure class="ph"><img src="img/photo-22.jpg" alt="消波塊前倒映金光的海浪"></figure>
+        <figure class="ph"><img src="img/photo-23.jpg" alt="黃昏海灘上彎腰撿拾的人影"></figure>
+        <figure class="ph"><img src="img/photo-24.jpg" alt="港邊步道與停泊的船隻"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="about">
+  <div class="wrap">
+    <h2 class="sec-h">關於<span>About</span></h2>
+    <div class="sec-body">
+      <div class="about">
+        <dl>
+          <div><dt>學歷</dt><dd><b>國立陽明交通大學 資訊工程學系</b> 大四<br>設計與創新科技跨域學程</dd></div>
+          <div><dt>經歷</dt><dd><b>晶晟精密科技</b> 實習生（2026／06–2026／09）<br><b>NYCU 大數據研究中心</b> 研究助理（2025／09–2026／09）</dd></div>
+          <div><dt>語言</dt><dd>多益 860（金色證書）</dd></div>
+        </dl>
+        <dl>
+          <div><dt>視覺與活動</dt><dd>資工系學會美宣長，負責系上活動的視覺設計<br>Smrangi 山福團：尖石鄉泰雅文苑服務隊總召，帶領 50 位工作人員</dd></div>
+          <div><dt>橋牌</dt><dd>U26 女子青年隊隊長<br>第 13 屆世界大學心智運動錦標賽選拔賽第 3 名</dd></div>
+          <div><dt>連結</dt><dd><a href="https://github.com/tingyun1412" target="_blank" rel="noopener">GitHub：tingyun1412</a></dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span>黃庭筠 Huang Ting-Yun</span><span>2026</span></div>
+</footer>
+
+</body>
+</html>
