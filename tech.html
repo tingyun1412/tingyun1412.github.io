@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="技術 × 設計：CityLayer、Physical AI、CAT 陪伴裝置與 LINE FRESH。">
+<title>技術 × 設計｜黃庭筠</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="nav" aria-label="主要">
+  <div class="wrap">
+    <a class="mark" href="index.html">黃庭筠</a>
+    <ul class="keep"><li><a class="back" href="index.html#works">← 作品一覽</a></li></ul>
+  </div>
+</nav>
+
+<header class="d-head">
+  <div class="wrap">
+    <div class="course"><b>資訊工程</b>2025–2026</div>
+    <h1>技術 × 設計<small>四個資工專案</small></h1>
+    <p class="lead">資工本科裡，這四個專案最接近設計：它們處理的都是人怎麼看、怎麼做、怎麼和東西互動。</p>
+  </div>
+</header>
+
+<main class="d-body">
+  <div class="wrap">
+
+      
+      <figure><div class="frame"><img src="img/city-trans.jpg" alt="CityLayer 兩個街景場景之間的銜接畫面"></div><figcaption>CityLayer：兩個獨立街景場景之間的對齊與切換</figcaption></figure>
+      <div class="tech" id="tech-cards">
+        <article id="citylayer">
+          <h3>CityLayer</h3>
+          <p>資訊工程專題。把單張街景全景圖依深度分層、補上被遮住的區域，各自訓練 3D Gaussian Splatting，讓使用者能在場景之間連續漫遊。我主要負責場景銜接模組。</p>
+          <p class="bridge">延伸：把工房與窯場數位保存成可以線上漫遊的空間</p>
+          <p class="more"><a href="https://github.com/yiying10/CityLayer" target="_blank" rel="noopener">程式碼（GitHub）</a></p>
+        </article>
+        <article id="physical-ai">
+          <h3>Physical AI</h3>
+          <p>人工智慧總整與實作期末專題。用 UMI 錄下人的示範動作，在 Isaac Lab 生成合成資料、訓練 diffusion policy，讓機械手臂學會疊杯、擺餐具，成功率 90%。我主要負責模型訓練與實驗比較。</p>
+          <p class="bridge">延伸：記錄職人的手部動作，讓手藝變成可以傳授的知識</p>
+          <p class="more"><a href="https://github.com/annchenn/AIC-final-project-team5" target="_blank" rel="noopener">程式碼（GitHub）</a></p>
+        </article>
+        <article id="cat">
+          <h3>CAT・Context-Aware boT</h3>
+          <p class="award">2026 梅竹黑客松 AMD 組第一名・梅竹大賞第二名</p>
+          <p>會記得你工作情境的毛絨貓陪伴裝置，結合 ESP32 感測與 AI 推論。我負責推論效能比較，以及裝置外觀的製作與設計。</p>
+          <p class="bridge">延伸：讓技術藏在一個可以抱著的物件裡</p>
+          <p class="more"><a href="https://github.com/EthelHsiao/2026-Meichu-Hackthon" target="_blank" rel="noopener">程式碼（GitHub）</a></p>
+        </article>
+        <article id="linefresh">
+          <h3>LINE FRESH 2025・LINE ツォンサー</h3>
+          <p class="award">227 組中入選前 12 組</p>
+          <p>一個零負擔的生活紀錄 LINE Bot：把零碎的文字和照片整理成每日、每週的回顧，幫人留住生活裡的小幸福。我主導產品規劃與 Figma 原型，負責使用者流程、功能架構與介面的資訊呈現，並用 322 份問卷驗證需求。</p>
+          <p class="bridge">延伸：從使用者的需求出發，而不是從功能出發</p>
+          <p class="more"><a href="https://youtu.be/nxdF80iGF9k" target="_blank" rel="noopener">展示影片（YouTube）</a></p>
+        </article>
+      </div>
+      <div class="g2" style="grid-template-columns:2.2fr 1fr;align-items:start">
+        <figure><div class="frame plain"><img src="img/lf-arch.jpg" alt="LINE ツォンサー 系統架構圖：紀錄、搜尋、回顧、目標追蹤四個功能，串接 Gemini、Vertex AI 與 Firebase"></div><figcaption>LINE ツォンサー：系統與功能架構</figcaption></figure>
+        <figure><div class="frame plain"><img src="img/lf-phone.jpg" alt="LINE ツォンサー 手機畫面：今日生活摘要"></div><figcaption>今日生活摘要畫面</figcaption></figure>
+      </div>
+  </div>
+</main>
+
+<nav class="pn" aria-label="上一件與下一件">
+  <div class="wrap"><a class="prev" href="graphics.html"><small>← 上一件</small><span>拍貼框與社群貼文</span></a><a class="next" href="notes.html"><small>下一件 →</small><span>觀察</span></a></div>
+</nav>
+
+<footer>
+  <div class="wrap"><span>黃庭筠 Huang Ting-Yun</span><span>2026</span></div>
+</footer>
+</body>
+</html>
